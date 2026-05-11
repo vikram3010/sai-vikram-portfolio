@@ -1039,69 +1039,126 @@ export default function Home() {
         </section>
 
         <section
-          id="contact"
-          className="relative mx-auto max-w-7xl px-6 py-28 text-center"
-        >
-          <p className="text-2xl uppercase tracking-[0.32em] text-[#D4C5B0]/65">
-            Get in touch
-          </p>
-          <h2 className="mt-6 text-7xl font-black text-white md:text-8xl">
-            Contact.
-          </h2>
+  id="contact"
+  className="relative mx-auto max-w-7xl px-6 py-28 text-center"
+>
+  <p className="text-2xl uppercase tracking-[0.32em] text-[#D4C5B0]/65">
+    Get in touch
+  </p>
 
-          <p className="mx-auto mt-10 max-w-4xl text-2xl leading-[1.55] text-[#D4C5B0]/78">
-            I am actively seeking opportunities in the United States where I can
-            apply machine learning, analytics, data engineering, and software
-            development to build impactful technical solutions.
-          </p>
+  <h2 className="mt-6 text-7xl font-black text-white md:text-8xl">
+    Contact.
+  </h2>
 
-          <div className="mx-auto mt-14 max-w-4xl rounded-[2rem] bg-[#201833] p-10 shadow-2xl shadow-black/30">
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-xl bg-[#120c25] px-7 py-5 text-left text-xl text-[#D4C5B0]/70">
-                Your Name
-              </div>
-              <div className="rounded-xl bg-[#120c25] px-7 py-5 text-left text-xl text-[#D4C5B0]/70">
-                Your Email
-              </div>
-            </div>
-            <div className="mt-6 min-h-40 rounded-xl bg-[#120c25] px-7 py-5 text-left text-xl text-[#D4C5B0]/70">
-              Your Message
-            </div>
+  <p className="mx-auto mt-10 max-w-4xl text-2xl leading-[1.55] text-[#D4C5B0]/78">
+    I am actively seeking opportunities in the United States where I can apply
+    machine learning, analytics, data engineering, and software development to
+    build impactful technical solutions.
+  </p>
 
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="rounded-full bg-[#BFA181] px-8 py-3 text-xl font-black text-[#1C1C1C] transition hover:bg-[#D4C5B0]"
-              >
-                Email Me
-              </a>
-              <a
-                href={RESUME_PATH}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-[#BFA181]/40 px-8 py-3 text-xl font-black text-[#D4C5B0]"
-              >
-                Resume
-              </a>
-              <a
-                href="https://github.com/vikram3010"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-[#BFA181]/40 px-8 py-3 text-xl font-black text-[#D4C5B0]"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/sai-vikram-karna-ananth-balasingam/"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-[#BFA181]/40 px-8 py-3 text-xl font-black text-[#D4C5B0]"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </section>
+  <form
+    action={`https://formsubmit.co/${CONTACT_EMAIL}`}
+    method="POST"
+    className="mx-auto mt-14 max-w-4xl rounded-[2rem] bg-[#201833] p-10 text-left shadow-2xl shadow-black/30"
+  >
+    <input
+      type="hidden"
+      name="_subject"
+      value="New message from Sai Vikram Portfolio"
+    />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_template" value="table" />
+    <input
+      type="hidden"
+      name="_next"
+      value="https://sai-vikram-portfolio.vercel.app/#contact"
+    />
+
+    <div className="grid gap-6 md:grid-cols-2">
+      <div>
+        <label className="mb-3 block text-xl font-black text-white">
+          Your Name
+        </label>
+        <input
+          type="text"
+          name="name"
+          required
+          placeholder="What is your good name?"
+          className="w-full rounded-xl border border-[#BFA181]/20 bg-[#120c25] px-7 py-5 text-xl text-white outline-none transition placeholder:text-[#D4C5B0]/45 focus:border-[#BFA181]"
+        />
+      </div>
+
+      <div>
+        <label className="mb-3 block text-xl font-black text-white">
+          Your Email
+        </label>
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="What is your email address?"
+          className="w-full rounded-xl border border-[#BFA181]/20 bg-[#120c25] px-7 py-5 text-xl text-white outline-none transition placeholder:text-[#D4C5B0]/45 focus:border-[#BFA181]"
+        />
+      </div>
+    </div>
+
+    <div className="mt-6">
+      <label className="mb-3 block text-xl font-black text-white">
+        Your Message
+      </label>
+      <textarea
+        name="message"
+        required
+        rows={6}
+        placeholder="What would you like to say?"
+        className="w-full resize-none rounded-xl border border-[#BFA181]/20 bg-[#120c25] px-7 py-5 text-xl text-white outline-none transition placeholder:text-[#D4C5B0]/45 focus:border-[#BFA181]"
+      />
+    </div>
+
+    <div className="mt-10 flex flex-wrap justify-center gap-4">
+      <button
+        type="submit"
+        className="rounded-full bg-[#BFA181] px-8 py-3 text-xl font-black text-[#1C1C1C] transition hover:bg-[#D4C5B0]"
+      >
+        Send Message
+      </button>
+
+      <a
+        href={`mailto:${CONTACT_EMAIL}`}
+        className="rounded-full border border-[#BFA181]/40 px-8 py-3 text-xl font-black text-[#D4C5B0] transition hover:text-[#BFA181]"
+      >
+        Email Me Directly
+      </a>
+
+      <a
+        href={RESUME_PATH}
+        target="_blank"
+        rel="noreferrer"
+        className="rounded-full border border-[#BFA181]/40 px-8 py-3 text-xl font-black text-[#D4C5B0] transition hover:text-[#BFA181]"
+      >
+        Resume
+      </a>
+
+      <a
+        href="https://github.com/vikram3010"
+        target="_blank"
+        rel="noreferrer"
+        className="rounded-full border border-[#BFA181]/40 px-8 py-3 text-xl font-black text-[#D4C5B0] transition hover:text-[#BFA181]"
+      >
+        GitHub
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/sai-vikram-karna-ananth-balasingam/"
+        target="_blank"
+        rel="noreferrer"
+        className="rounded-full border border-[#BFA181]/40 px-8 py-3 text-xl font-black text-[#D4C5B0] transition hover:text-[#BFA181]"
+      >
+        LinkedIn
+      </a>
+    </div>
+  </form>
+</section>
 
         <footer className="border-t border-[#BFA181]/15 py-10 text-center text-lg text-[#D4C5B0]/55">
           Built with Next.js, React, Tailwind CSS, and Framer Motion · Sai
